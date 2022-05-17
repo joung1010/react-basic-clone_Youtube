@@ -1,8 +1,11 @@
 import './app.css';
+import YoutubeHeader from "./component/header/youtubeHeader";
 
 function App() {
   return (
-    <h1>Hello :)</h1>
+   <>
+    <YoutubeHeader/>
+   </>
   );
 }
 
