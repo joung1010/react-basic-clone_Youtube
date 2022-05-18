@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: auto;
 }
 
 body {
@@ -10,37 +11,39 @@ body {
     font-size: 1.5rem;
     background-color: black;
     width: 50%;
-    margin: auto;
-    padding: 0.5em;
     display: flex;
     align-items: center;
 }
 
+.headerNameBox {
+    flex-basis: 20%;
+    margin: 0;
+    display: flex;
+}
+
 .icon {
     color: red;
-    font-size: 2.5rem;
-    margin: 0 0.2em;
+    font-size: 3.5rem;
+    margin: 0 0.5rem;
 }
 
 .headerName {
     color: white;
-    margin-right: 0.5em;
 
-
+}
+.headerBox {
+    flex-basis: 80%;
+    margin: 0;
 }
 
 .headerInput {
-    width: 80%;
     height: 2.5rem;
-    margin-top: 0.5rem;
-
-
+    width: 90%;
 }
 .headerButton {
     background-color: #333333;
     color: white;
     height: 2.5rem;
-    margin-top: 0.5rem;
 }
 
 .headerButton:hover {
