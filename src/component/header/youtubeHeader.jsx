@@ -7,18 +7,20 @@ import styles from './header.module.css'
 class YoutubeHeader extends Component {
     render() {
         return (
-            <header className={styles.header}>
-                <div className={styles.headerNameBox}>
-                    <div className={styles.icon}><FontAwesomeIcon icon={faYoutubeSquare}/></div>
-                    <div className={styles.headerName}>Youtube</div>
+            <section>
+                <div className={ `${styles.section} ${styles.header}`}>
+                    <div className={styles.headerNameBox}>
+                        <div className={styles.icon}><FontAwesomeIcon icon={faYoutubeSquare}/></div>
+                        <div className={styles.headerName}>Youtube</div>
+                    </div>
+                    <div className={styles.headerBox}>
+                        <input className={styles.headerInput} type="text" placeholder="Search...."/>
+                        <button className={styles.headerButton}>
+                            <FontAwesomeIcon icon={faSearch}/>
+                        </button>
+                    </div>
                 </div>
-                <div className={styles.headerBox}>
-                    <input className={styles.headerInput} type="text" placeholder="Search...."/>
-                    <button className={styles.headerButton}>
-                        <FontAwesomeIcon icon={faSearch}/>
-                    </button>
-                </div>
-            </header>
+            </section>
         );
     }
 }

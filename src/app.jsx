@@ -8,15 +8,6 @@ class App extends Component{
         options: { method: 'GET', redirect: 'follow',},
     }
 
-    handleVideo = () => {
-
-      return   fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxWidth=25&key=AIzaSyAbqjAMe0t9nrmoK55BlzHHLMlTmE6ASSA",
-            this.state.options)
-            .then(response => response.json())
-            .then(result => result)
-            .catch(error => console.log('error', error));
-
-    };
 
 
  render() {
@@ -25,7 +16,7 @@ class App extends Component{
              <YoutubeHeader/>
              <VideoList
                  videoInfo={this.state.options}
-                onHandleVideo={this.handleVideo}
+                 onHandleVideo={this.handleVideo}
              />
          </>
      );

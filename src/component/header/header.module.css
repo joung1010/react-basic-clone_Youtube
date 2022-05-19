@@ -1,12 +1,7 @@
-* {
-    box-sizing: border-box;
+.section {
+    text-align: center;
     margin: auto;
 }
-
-body {
-    text-align: center;
-}
-
 .header {
     font-size: 1.5rem;
     background-color: black;

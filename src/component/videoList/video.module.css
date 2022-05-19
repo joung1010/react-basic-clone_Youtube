@@ -1,0 +1,13 @@
+.videoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.video {
+    flex-basis: 50%;
+    margin: 0;
+
+}
+.thumbnail {
+
+}

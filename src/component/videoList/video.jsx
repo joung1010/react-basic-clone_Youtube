@@ -1,10 +1,19 @@
 import React, {Component} from 'react';
+import styles from './video.module.css'
 
 class Video extends Component {
     render() {
+        const {title, thumbnails, channelTitle} = this.props.snippet;
         return (
-            <div>
-                
+            <div className={styles.video}>
+                <img id={this.props.id}
+                     src={thumbnails.default.url}
+                     width={thumbnails.default.width}
+                     height={thumbnails.default.height}
+                     className={styles.thumbnail}
+                />
+                <div>{title}</div>
+                <div>{channelTitle}</div>
             </div>
         );
     }
