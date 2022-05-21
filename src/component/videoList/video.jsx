@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { PureComponent} from 'react';
 import styles from './video.module.css'
 
-class Video extends Component {
+class Video extends PureComponent {
     render() {
         const {title, thumbnails, channelTitle} = this.props.snippet;
         return (
