@@ -6,14 +6,16 @@ class Video extends Component {
         const {title, thumbnails, channelTitle} = this.props.snippet;
         return (
             <div className={styles.video}>
-                <img id={this.props.id}
-                     src={thumbnails.default.url}
-                     width={thumbnails.default.width}
-                     height={thumbnails.default.height}
-                     className={styles.thumbnail}
+                <img
+                    src={thumbnails.default.url}
+                    width={thumbnails.default.width}
+                    height={thumbnails.default.height}
+                    className={styles.thumbnail}
                 />
-                <div>{title}</div>
-                <div>{channelTitle}</div>
+                <div>
+                    <div>{title}</div>
+                    <div>{channelTitle}</div>
+                </div>
             </div>
         );
     }

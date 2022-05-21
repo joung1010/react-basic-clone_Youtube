@@ -27,10 +27,10 @@ class VideoList extends Component {
 
     render() {
         return (
-            <section>
-                <div className={styles.videoContainer}>
+            <section >
+                <div className={`${styles.section} ${styles.videoContainer}`}>
                     {this.state.items.map(item => (
-                        <Video id={item.id}
+                        <Video key={item.id}
                                snippet={item.snippet}
                         />
                     ))
