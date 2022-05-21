@@ -12,9 +12,9 @@ class Video extends Component {
                     height={thumbnails.default.height}
                     className={styles.thumbnail}
                 />
-                <div>
+                <div className={styles.contents}>
                     <div>{title}</div>
-                    <div>{channelTitle}</div>
+                    <div className={styles.channelTitle}>{channelTitle}</div>
                 </div>
             </div>
         );
