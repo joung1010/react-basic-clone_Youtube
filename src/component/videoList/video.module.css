@@ -31,3 +31,28 @@
 .channelTitle {
     color: grey;
 }
+
+.videoDetailContainer {
+    display: flex;
+    max-width: 70%;
+    padding: 0.5rem;
+}
+.videoItem {
+    flex-basis: 60%;
+}
+
+.videoList {
+    flex-basis: 40%
+}
+
+.videoList > .videoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.videoList > .videoContainer > .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+}

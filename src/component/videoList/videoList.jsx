@@ -7,16 +7,16 @@ class VideoList extends Component {
 
     render() {
         return (
-            <section >
                 <div className={`${styles.section} ${styles.videoContainer}`}>
                     {this.props.videoItems.map(item => (
-                        <Video key={item.id}
+                        <Video key={item.id.videoId ? item.id.videoId : item.id}
+                               id={item.id}
                                snippet={item.snippet}
+                               onHandleClick={this.props.onHandleClick}
                         />
                     ))
                     }
                 </div>
-            </section>
         );
     }
 }
