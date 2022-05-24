@@ -12,7 +12,6 @@ class Youtube {
         let response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
             this.getRequestOptions);
         let result = await response.json();
-        console.log(result.items);
         return result.items;
     }
 
