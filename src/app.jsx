@@ -15,7 +15,10 @@ function App({youtube}) {
 
     const search = (query)=>{
         youtube.search(query)
-            .then(items => setVideos(items));
+            .then(items => {
+                setVideos(items)
+                setSelectedVideo(null);
+            });
     };
 
     // 업데이트 할때마다 네트워크 동신을 하는 것은 좋지 않다.
