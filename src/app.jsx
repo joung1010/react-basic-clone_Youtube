@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import VideoList from "./component/video_list/video_list";
+import YoutubeHeader from "./component/youtube_header/youtube_header";
 
 const App = (props) => {
     const [videoList,setVideoList] = useState([]);
@@ -16,7 +17,12 @@ const App = (props) => {
             .catch(error => console.log('error', error));
     },[]);
 
-    return (<VideoList videoList={videoList}/>
+    return (
+        <section>
+            <YoutubeHeader/>
+            <VideoList videoList={videoList}/>
+        </section>
+
     );
 };
 
