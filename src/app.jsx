@@ -10,7 +10,10 @@ const App = ({youtube}) => {
 
     const handleSearch = (query) => {
         youtube.search(query)
-            .then(items => setVideoList(items));
+            .then(items => {
+                setSelectedVideo(null);
+                setVideoList(items)
+            });
     };
 
     const handleClick = (video) => {
