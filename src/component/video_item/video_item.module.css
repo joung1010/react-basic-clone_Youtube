@@ -1,36 +1,37 @@
 .container {
-    margin-bottom: 0.3em;
-    padding: 0.6rem;
+
+    padding: 0.3em;
 }
-.container.grid {
+.list.container {
     width: 50%;
 }
-.container.list {
+.list.grid {
     width: 100%;
 }
-
 
 .video {
     display: flex;
     align-items: center;
     border: 1px solid lightgray;
+    border-radius: 30px;
     box-shadow: -3px 2px 14px -4px rgba(0,0,0,0.99);
-    transition: transform 250ms ease-in;
-}
-
-.video:hover {
+    transition:transform 250ms ease-in ;
     cursor: pointer;
+}
+.video:hover{
     transform: scale(1.1);
 }
-
-.thumbnail {
+.img {
     width: 40%;
+    border-radius: 30px;
 }
-
 .description {
     margin-left: 0.4em;
 }
-
-.title, .channelNm {
+.title,.channelTitle {
     margin: 0;
+}
+.channelTitle {
+    color: grey;
+    margin-top: 0.4em;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './video_detail.module.css';
+import styles from './video_detail.module.css'
 
 const VideoDetail = ({video,video:{snippet}}) => (
-    <section>
+    <section className={styles.detail}>
         <iframe className={styles.video}
                 type="text/html"
                 width="100%"

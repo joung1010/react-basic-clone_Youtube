@@ -1,49 +1,46 @@
 import React, {useEffect, useState} from 'react';
 import VideoList from "./component/video_list/video_list";
-import YoutubeHeader from "./component/youtube_header/youtube_header";
+import VideoHeader from "./component/video_header/video_header";
+import styles from './app.module.css';
 import VideoDetail from "./component/video_detail/video_detail";
-import styles from './app.module.css'
 
 const App = ({youtube}) => {
-    const [videoList,setVideoList] = useState([]);
+    const [videoList, setVideoList] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
 
-    const handleSearch = (query) => {
+    const search = (query) => {
         youtube.search(query)
             .then(items => {
                 setSelectedVideo(null);
-                setVideoList(items)
+                setVideoList(items);
             });
     };
 
-    const handleClick = (video) => {
+    const click = (video) => {
         setSelectedVideo(video);
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         youtube.mostPopular()
             .then(items => setVideoList(items));
-
-    },[]);
-
+    }, []);
 
     return (
         <div className={styles.app}>
-            <YoutubeHeader onSearch={handleSearch}/>
-            <section className={styles.content}>
-                {  selectedVideo &&
-                    <div className={styles.detail}>
-                        <VideoDetail video={selectedVideo}/>
-                    </div>
-                }
-                <div className={styles.list}>
-                    <VideoList videoList={videoList} onClickVideo={handleClick}
-                    display={selectedVideo ? "list" : "grid"}/>
-                </div>
-            </section>
+            <VideoHeader onSearch={search}/>
+           <section className={styles.contents}>
+               {selectedVideo && <div className={styles.video}>
+                   <VideoDetail video={selectedVideo}/>
+               </div>}
+              <div className={styles.list}>
+                  <VideoList videoList={videoList}
+                             onClick={click}
+                             display={selectedVideo ? "grid" : "list"}
+                  />
+              </div>
+           </section>
         </div>
 
     );
-};
-
+}
 export default App;
