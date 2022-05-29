@@ -3,5 +3,6 @@
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    max-width: 80rem;
+    margin:0;
+
 }
