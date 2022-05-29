@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import styles from './app.module.css'
 import VideoList from "./component/video_list/video_list";
 import SearchHeader from "./component/search_header/search_header";
@@ -13,13 +13,13 @@ function App({youtube}) {
         setSelectedVideo(video);
     };
 
-    const search = (query)=>{
+    const search = useCallback( (query)=>{
         youtube.search(query)
             .then(items => {
                 setVideos(items)
                 setSelectedVideo(null);
             });
-    };
+    },[youtube]);
 
     // 업데이트 할때마다 네트워크 동신을 하는 것은 좋지 않다.
     // 텅텅 빈 배열을 인자로 넘겨주면 mount가 되었을 때만 호출된다.
@@ -27,7 +27,7 @@ function App({youtube}) {
     useEffect(()=>{
         youtube.mostPopular()
             .then(items => setVideos(items));
-    },[]);
+    },[youtube]);
 
     return (
       <div className={styles.app}>
