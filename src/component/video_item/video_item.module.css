@@ -35,7 +35,10 @@
     font-size: 0.6rem;
 
 }
-@media (max-width: 1300px) {
+@media screen and  (max-width: 48rem) {
+    .videos {
+        flex-direction: column;
+    }
     .container.grid {
         width: 100%;
     }
